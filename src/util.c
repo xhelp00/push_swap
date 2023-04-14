@@ -3,19 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   util.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: phelebra <phelebra@student.42.fr>          +#+  +:+       +#+        */
+/*   By: phelebra <xhelp00@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 15:43:50 by phelebra          #+#    #+#             */
-/*   Updated: 2023/04/14 15:57:52 by phelebra         ###   ########.fr       */
+/*   Updated: 2023/04/14 21:26:43 by phelebra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void    ft_error(void)
+void	ft_error(void)
 {
-    ft_printf("Error\n");
-    exit(1);
+	ft_printf("Error\n");
+	exit(1);
 }
 
 void	ft_freestr(char **s)
