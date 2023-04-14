@@ -6,13 +6,13 @@
 /*   By: phelebra <xhelp00@gmail.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 17:20:29 by phelebra          #+#    #+#             */
-/*   Updated: 2023/04/14 21:26:16 by phelebra         ###   ########.fr       */
+/*   Updated: 2023/04/14 21:47:54 by phelebra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int main(int ac, char **av)
+int	main(int ac, char **av)
 {
 	t_stack	*a;
 
@@ -28,7 +28,7 @@ int main(int ac, char **av)
 	return (0);
 }
 
-t_stack *ft_fill(int ac, char **av)
+t_stack	*ft_fill(int ac, char **av)
 {
 	t_stack	*a;
 	int		i;
@@ -52,7 +52,7 @@ t_stack *ft_fill(int ac, char **av)
 	return (a);
 }
 
-t_stack *ft_fill2(char **av)
+t_stack	*ft_fill2(char **av)
 {
 	t_stack	*a;
 	char	**tmp;
