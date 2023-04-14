@@ -1,35 +1,49 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   util.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: phelebra <phelebra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/12 09:08:46 by phelebra          #+#    #+#             */
-/*   Updated: 2023/04/14 15:57:39 by phelebra         ###   ########.fr       */
+/*   Created: 2023/04/14 15:43:50 by phelebra          #+#    #+#             */
+/*   Updated: 2023/04/14 15:57:52 by phelebra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "../include/push_swap.h"
 
-# include "libft.h"
-
-typedef struct s_stack
+void    ft_error(void)
 {
-	long			nbr;
-	long			index;
-	struct s_stack	*next;
-	struct s_stack	*prev;
-}	t_stack;
+    ft_printf("Error\n");
+    exit(1);
+}
 
-void    	ft_error(void);
-void		ft_freestr(char **s);
-void		ft_free(t_stack **lst);
+void	ft_freestr(char **s)
+{
+	char	*c;
 
+	if (!s)
+		return ;
+	while (*s)
+	{
+		c = *s;
+		s++;
+		free(c);
+	}
+	*s = NULL;
+}
 
-t_stack 	*ft_fill(int ac, char **av);
+void	ft_free(t_stack **lst)
+{
+	t_stack	*tmp;
 
-
-
-#endif
+	if (!lst)
+		return ;
+	while (*lst)
+	{
+		tmp = (*lst)->next;
+		(*lst)->nbr = 0;
+		free(*lst);
+		*lst = tmp;
+	}
+}
