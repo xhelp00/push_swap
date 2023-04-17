@@ -3,99 +3,97 @@
 /*                                                        :::      ::::::::   */
 /*   util_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: phelebra <xhelp00@gmail.com>               +#+  +:+       +#+        */
+/*   By: phelebra <phelebra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/14 21:54:01 by phelebra          #+#    #+#             */
-/*   Updated: 2023/04/14 22:03:01 by phelebra         ###   ########.fr       */
+/*   Created: 2023/04/17 09:52:32 by phelebra          #+#    #+#             */
+/*   Updated: 2023/04/17 10:16:04 by phelebra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-void	ft_add_back(t_stack **stack, t_stack *stack_new)
-{
-	if (!stack)
-		return ;
-	if (!*stack)
-		*stack = stack_new;
-	else
-		(ft_lstlast(*stack))->next = stack_new;
-}
-
-t_stack	*ft_fill(int ac, char **av)
-{
-	t_stack	*a;
-	int		i;
-	int		j;
-
-	if (ac < 2)
-		ft_error();
-	a = NULL;
-	if (ac == 2)
-		a = ft_fill2(av);
-	else
-	{
-		i = 1;
-		while (i < ac)
-		{
-			j = ft_extratoi(av[i]);
-			ft_add_back(&a, ft_stack_new(j));
-			i++;
-		}
-	}
-	return (a);
-}
-
-t_stack	*ft_fill2(char **av)
-{
-	t_stack	*a;
-	char	**tmp;
-	int		i;
-	int		j;
-
-	tmp = ft_split(av[1], ' ');
-	i = 0;
-	a = NULL;
-	while (tmp[i])
-	{
-		j = ft_extratoi(tmp[i]);
-		ft_add_back(&a, ft_stack_new(j));
-		i++;
-	}
-	ft_freestr(tmp);
-	free(tmp);
-	return (a);
-}
-
-int	ft_duplicity(t_stack *a)
-{
-	t_stack	*tmp;
-
-	while (a)
-	{
-		tmp = a->next;
-		while (tmp)
-		{
-			if (a->nbr == tmp->nbr)
-				return (1);
-			tmp = tmp->next;
-		}
-		a = a->next;
-	}
-	return (0);
-}
-
-int	ft_issorted(t_stack *stack_a)
+int	ft_lstsize(t_stack *lst)
 {
 	int	i;
 
-	i = stack_a->nbr;
-	while (stack_a)
+	i = 0;
+	while (lst)
 	{
-		if (i > stack_a->nbr)
-			return (0);
-		i = stack_a->nbr;
-		stack_a = stack_a->next;
+		i++;
+		lst = lst->next;
 	}
-	return (1);
+	return (i);
+}
+
+int	ft_min(t_stack *a)
+{
+	int		i;
+
+	i = a->nbr;
+	while (a)
+	{
+		if (a->nbr < i)
+			i = a->nbr;
+		a = a->next;
+	}
+	return (i);
+}
+
+int	ft_find_index(t_stack *a, int nbr)
+{
+	int	i;
+
+	i = 0;
+	while (a->nbr != nbr)
+	{
+		i++;
+		a = a->next;
+	}
+	return (i);
+}
+
+int	ft_pos_a(t_stack *stack_a, int new)
+{
+	int		i;
+	t_stack	*tmp;
+
+	i = 1;
+	if (new < stack_a->nbr && new > ft_lstlast(stack_a)->nbr)
+		i = 0;
+	else if (new > ft_max(stack_a) || new < ft_min(stack_a))
+		i = ft_find_index(stack_a, ft_min(stack_a));
+	else
+	{
+		tmp = stack_a->next;
+		while (stack_a->nbr > new || tmp->nbr < new)
+		{
+			stack_a = stack_a->next;
+			tmp = stack_a->next;
+			i++;
+		}
+	}
+	return (i);
+}
+
+int	ft_pos_b(t_stack *stack_b, int new)
+{
+	int		i;
+	t_stack	*tmp;
+
+	i = 1;
+	if (new > stack_b->nbr && new < ft_lstlast(stack_b)->nbr)
+		i = 0;
+	else if (new > ft_max(stack_b) || new < ft_min(stack_b))
+		i = ft_find_index(stack_b, ft_max(stack_b));
+	else
+	{
+		tmp = stack_b->next;
+		while (stack_b->nbr < new || tmp->nbr > new)
+		{
+			stack_b = stack_b->next;
+			tmp = stack_b->next;
+			i++;
+		}
+	}
+	return (i);
 }
