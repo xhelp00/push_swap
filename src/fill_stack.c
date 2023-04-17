@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   util_stack.c                                       :+:      :+:    :+:   */
+/*   fill_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: phelebra <xhelp00@gmail.com>               +#+  +:+       +#+        */
+/*   By: phelebra <phelebra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 21:54:01 by phelebra          #+#    #+#             */
-/*   Updated: 2023/04/14 22:03:01 by phelebra         ###   ########.fr       */
+/*   Updated: 2023/04/17 16:52:02 by phelebra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,17 +85,17 @@ int	ft_duplicity(t_stack *a)
 	return (0);
 }
 
-int	ft_issorted(t_stack *stack_a)
+int	ft_issorted(t_stack *a)
 {
 	int	i;
 
-	i = stack_a->nbr;
-	while (stack_a)
+	i = a->nbr;
+	while (a)
 	{
-		if (i > stack_a->nbr)
+		if (i > a->nbr)
 			return (0);
-		i = stack_a->nbr;
-		stack_a = stack_a->next;
+		i = a->nbr;
+		a = a->next;
 	}
 	return (1);
 }
