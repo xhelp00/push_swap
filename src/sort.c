@@ -6,7 +6,7 @@
 /*   By: phelebra <phelebra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 10:55:55 by phelebra          #+#    #+#             */
-/*   Updated: 2023/04/17 16:51:59 by phelebra         ###   ########.fr       */
+/*   Updated: 2023/04/17 17:08:01 by phelebra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,17 @@
 
 void	ft_sort(t_stack **a)
 {
-	t_stack	*stack_b;
+	t_stack	*b;
 	int		i;
 
-	stack_b = NULL;
+	b = NULL;
 	if (ft_lstsize(*a) == 2)
 		ft_sa(a, 0);
 	else
 	{
 		i = ft_find_index(*a, ft_min(*a));
-		stack_b = ft_sort_b(a);
-		a = ft_sort_a(a, &stack_b);
+		b = ft_sort_b(a);
+		a = ft_sort_a(a, &b);
 		if (i < ft_lstsize(*a) - i)
 		{
 			while ((*a)->nbr != ft_min(*a))
@@ -59,3 +59,72 @@ void	ft_sort_3(t_stack **a)
 			ft_sa(a, 0);
 	}
 }
+
+/* This function sort and push stacks until 3 members in stack A left*/
+t_stack	*ft_sort_b(t_stack **a)
+{
+	t_stack	*b;
+
+	b = NULL;
+	if (ft_lstsize(*a) > 3 && !ft_checksorted(*a))
+		ft_pb(a, &b, 0);
+	if (ft_lstsize(*a) > 3 && !ft_checksorted(*a))
+		ft_pb(a, &b, 0);
+	if (ft_lstsize(*a) > 3 && !ft_checksorted(*a))
+		ft_move_to_b(a, &b);
+	if (!ft_issorted(*a))
+		ft_sort_3(a);
+	return (b);
+}
+
+void	ft_move_to_b(t_stack **a, t_stack **b)
+{
+	int		i;
+	t_stack	*temp;
+
+	while (ft_lstsize(*a) > 3 && !ft_issorted(*a))
+	{
+		temp = *a;
+		i = ft_rotate_type_ab(*a, *b);
+		while (i >= 0)
+		{
+			if (i == ft_case_rarb(*a, *b, temp->nbr))
+				i = ft_apply_rarb(a, b, temp->nbr, 'a');
+			else if (i == ft_case_rrarrb(*a, *b, temp->nbr))
+				i = ft_apply_rrarrb(a, b, temp->nbr, 'a');
+			else if (i == ft_case_rarrb(*a, *b, temp->nbr))
+				i = ft_apply_rarrb(a, b, temp->nbr, 'a');
+			else if (i == ft_case_rrarb(*a, *b, temp->nbr))
+				i = ft_apply_rrarb(a, b, temp->nbr, 'a');
+			else
+				temp = temp->next;
+		}
+	}
+}
+/* pushing back the elements from B to A until B is empty*/
+t_stack	**ft_sort_a(t_stack **a, t_stack **b)
+{
+	int		i;
+	t_stack	*temp;
+
+	while (*b)
+	{
+		temp = *b;
+		i = ft_rotate_type_ba(*a, *b);
+		while (i >= 0)
+		{
+			if (i == ft_case_rarb_a(*a, *b, temp->nbr))
+				i = ft_apply_rarb(a, b, temp->nbr, 'b');
+			else if (i == ft_case_rarrb_a(*a, *b, temp->nbr))
+				i = ft_apply_rarrb(a, b, temp->nbr, 'b');
+			else if (i == ft_case_rrarrb_a(*a, *b, temp->nbr))
+				i = ft_apply_rrarrb(a, b, temp->nbr, 'b');
+			else if (i == ft_case_rrarb_a(*a, *b, temp->nbr))
+				i = ft_apply_rrarb(a, b, temp->nbr, 'b');
+			else
+				temp = temp->next;
+		}
+	}
+	return (a);
+}
+
