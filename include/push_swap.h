@@ -6,7 +6,7 @@
 /*   By: phelebra <phelebra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 09:08:46 by phelebra          #+#    #+#             */
-/*   Updated: 2023/04/17 17:37:04 by phelebra         ###   ########.fr       */
+/*   Updated: 2023/04/17 17:47:40 by phelebra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,5 +60,10 @@ int			ft_case_rarb_a(t_stack *a, t_stack *b, int c);
 int			ft_case_rrarrb_a(t_stack *a, t_stack *b, int c);
 int			ft_case_rarrb_a(t_stack *a, t_stack *b, int c);
 int			ft_case_rrarb_a(t_stack *a, t_stack *b, int c);
+/* execute */
+int			ft_apply_rarb(t_stack **a, t_stack **b, int c, char s);
+int			ft_apply_rrarrb(t_stack **a, t_stack **b, int c, char s);
+int			ft_apply_rrarb(t_stack **a, t_stack **b, int c, char s);
+int			ft_apply_rarrb(t_stack **a, t_stack **b, int c, char s);
 
 #endif

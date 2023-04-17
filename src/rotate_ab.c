@@ -6,7 +6,7 @@
 /*   By: phelebra <phelebra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 17:25:13 by phelebra          #+#    #+#             */
-/*   Updated: 2023/04/17 17:31:48 by phelebra         ###   ########.fr       */
+/*   Updated: 2023/04/17 17:38:23 by phelebra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ int	ft_rotate_type_ab(t_stack *a, t_stack *b)
 	}
 	return (i);
 }
-
 
 int	ft_case_rarb(t_stack *a, t_stack *b, int c)
 {
