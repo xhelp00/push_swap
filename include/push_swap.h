@@ -6,7 +6,7 @@
 /*   By: phelebra <phelebra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 09:08:46 by phelebra          #+#    #+#             */
-/*   Updated: 2023/04/18 11:46:58 by phelebra         ###   ########.fr       */
+/*   Updated: 2023/04/18 16:32:01 by phelebra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ typedef struct s_stack
 {
 	long			nbr;
 	struct s_stack	*next;
-	struct s_stack	*prev;
 }	t_stack;
 
 /* util */
