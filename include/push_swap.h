@@ -6,7 +6,7 @@
 /*   By: phelebra <phelebra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 09:08:46 by phelebra          #+#    #+#             */
-/*   Updated: 2023/04/18 09:20:26 by phelebra         ###   ########.fr       */
+/*   Updated: 2023/04/18 10:11:28 by phelebra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,5 +82,9 @@ void		ft_rr(t_stack **a, t_stack **b, int flag);
 void		ft_rra(t_stack **a, int flag);
 void		ft_rrb(t_stack **b, int flag);
 void		ft_rrr(t_stack **a, t_stack **b, int flag);
+/* BONUS - checker */
+void		ft_process(t_stack **a, t_stack **b, char *line);
+char		*ft_check_command(t_stack **a, t_stack **b, char *line);
+void		ft_check_rr(t_stack **a, t_stack **b, char *line);
 
 #endif
