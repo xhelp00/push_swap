@@ -6,13 +6,13 @@
 /*   By: phelebra <phelebra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 09:52:32 by phelebra          #+#    #+#             */
-/*   Updated: 2023/04/17 17:51:40 by phelebra         ###   ########.fr       */
+/*   Updated: 2023/04/18 09:21:42 by phelebra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/push_swap.h"
 
-int	ft_lstsize(t_stack *lst)
+int	lstsize(t_stack *lst)
 {
 	int	i;
 
@@ -58,7 +58,7 @@ int	ft_pos_a(t_stack *stack_a, int new)
 	t_stack	*tmp;
 
 	i = 1;
-	if (new < stack_a->nbr && new > ft_lstlast(stack_a)->nbr)
+	if (new < stack_a->nbr && new > lstlast(stack_a)->nbr)
 		i = 0;
 	else if (new > ft_max(stack_a) || new < ft_min(stack_a))
 		i = ft_find_index(stack_a, ft_min(stack_a));
@@ -81,7 +81,7 @@ int	ft_pos_b(t_stack *stack_b, int new)
 	t_stack	*tmp;
 
 	i = 1;
-	if (new > stack_b->nbr && new < ft_lstlast(stack_b)->nbr)
+	if (new > stack_b->nbr && new < lstlast(stack_b)->nbr)
 		i = 0;
 	else if (new > ft_max(stack_b) || new < ft_min(stack_b))
 		i = ft_find_index(stack_b, ft_max(stack_b));

@@ -6,7 +6,7 @@
 /*   By: phelebra <phelebra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 17:25:08 by phelebra          #+#    #+#             */
-/*   Updated: 2023/04/17 17:51:24 by phelebra         ###   ########.fr       */
+/*   Updated: 2023/04/18 09:13:55 by phelebra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,9 +50,9 @@ int	ft_case_rrarrb_a(t_stack *a, t_stack *b, int c)
 
 	i = 0;
 	if (ft_pos_a(a, c))
-		i = ft_lstsize(a) - ft_pos_a(a, c);
-	if ((i < (ft_lstsize(b) - ft_find_index(b, c))) && ft_find_index(b, c))
-		i = ft_lstsize(b) - ft_find_index(b, c);
+		i = lstsize(a) - ft_pos_a(a, c);
+	if ((i < (lstsize(b) - ft_find_index(b, c))) && ft_find_index(b, c))
+		i = lstsize(b) - ft_find_index(b, c);
 	return (i);
 }
 
@@ -62,7 +62,7 @@ int	ft_case_rarrb_a(t_stack *a, t_stack *b, int c)
 
 	i = 0;
 	if (ft_find_index(b, c))
-		i = ft_lstsize(b) - ft_find_index(b, c);
+		i = lstsize(b) - ft_find_index(b, c);
 	i = ft_pos_a(a, c) + i;
 	return (i);
 }
@@ -73,7 +73,7 @@ int	ft_case_rrarb_a(t_stack *a, t_stack *b, int c)
 
 	i = 0;
 	if (ft_pos_a(a, c))
-		i = ft_lstsize(a) - ft_pos_a(a, c);
+		i = lstsize(a) - ft_pos_a(a, c);
 	i = ft_find_index(b, c) + i;
 	return (i);
 }

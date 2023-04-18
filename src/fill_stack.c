@@ -6,7 +6,7 @@
 /*   By: phelebra <phelebra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 21:54:01 by phelebra          #+#    #+#             */
-/*   Updated: 2023/04/17 16:52:02 by phelebra         ###   ########.fr       */
+/*   Updated: 2023/04/18 09:13:59 by phelebra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_add_back(t_stack **stack, t_stack *stack_new)
 	if (!*stack)
 		*stack = stack_new;
 	else
-		(ft_lstlast(*stack))->next = stack_new;
+		(lstlast(*stack))->next = stack_new;
 }
 
 t_stack	*ft_fill(int ac, char **av)

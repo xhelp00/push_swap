@@ -6,7 +6,7 @@
 /*   By: phelebra <phelebra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 10:55:55 by phelebra          #+#    #+#             */
-/*   Updated: 2023/04/18 08:10:50 by phelebra         ###   ########.fr       */
+/*   Updated: 2023/04/18 09:21:03 by phelebra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@ void	ft_sort(t_stack **a)
 	int		i;
 
 	b = NULL;
-	if (ft_lstsize(*a) == 2)
+	if (lstsize(*a) == 2)
 		ft_sa(a, 0);
 	else
 	{
 		i = ft_find_index(*a, ft_min(*a));
 		b = ft_sort_b(a);
 		a = ft_sort_a(a, &b);
-		if (i < ft_lstsize(*a) - i)
+		if (i < lstsize(*a) - i)
 		{
 			while ((*a)->nbr != ft_min(*a))
 				ft_ra(a, 0);
@@ -66,11 +66,11 @@ t_stack	*ft_sort_b(t_stack **a)
 	t_stack	*b;
 
 	b = NULL;
-	if (ft_lstsize(*a) > 3 && !ft_checksorted(*a))
+	if (lstsize(*a) > 3 && !ft_issorted(*a))
 		ft_pb(a, &b, 0);
-	if (ft_lstsize(*a) > 3 && !ft_checksorted(*a))
+	if (lstsize(*a) > 3 && !ft_issorted(*a))
 		ft_pb(a, &b, 0);
-	if (ft_lstsize(*a) > 3 && !ft_checksorted(*a))
+	if (lstsize(*a) > 3 && !ft_issorted(*a))
 		ft_move_to_b(a, &b);
 	if (!ft_issorted(*a))
 		ft_sort_3(a);
@@ -82,7 +82,7 @@ void	ft_move_to_b(t_stack **a, t_stack **b)
 	int		i;
 	t_stack	*temp;
 
-	while (ft_lstsize(*a) > 3 && !ft_issorted(*a))
+	while (lstsize(*a) > 3 && !ft_issorted(*a))
 	{
 		temp = *a;
 		i = ft_rotate_type_ab(*a, *b);

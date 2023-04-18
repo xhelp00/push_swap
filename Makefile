@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: phelebra <xhelp00@gmail.com>               +#+  +:+       +#+         #
+#    By: phelebra <phelebra@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/11 17:20:39 by phelebra          #+#    #+#              #
-#    Updated: 2023/04/12 09:54:46 by phelebra         ###   ########.fr        #
+#    Updated: 2023/04/18 09:08:25 by phelebra         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,9 +20,10 @@ RED		:= \033[31;1m
 GREEN	:= \033[32;1m
 RESET	:= \033[0m
 
-#OBJ = obj/main.o obj/checks.o obj/map.o obj/error.o obj/path_finder.o obj/utils.o \
-			obj/so_long.o obj/assets.o obj/hooks.o obj/draw.o obj/put_objects.o \
-			obj/move.o
+OBJ = obj/commands_px.o obj/commands_rrx.o obj/commands_rx.o obj/commands_sx.o \
+		obj/execute.o obj/fill_stack.o obj/push_swap.o obj/rotate_ab.o \
+		obj/rotate_ba.o obj/sort.o obj/util_stack_2.o obj/util_stack.o obj/util.o
+
 #MLX = lib/MLX42/libmlx42.a
 #MLX_DIR = lib/MLX42/
 LIBFT = obj/libft/libft.o

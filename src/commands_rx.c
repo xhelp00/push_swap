@@ -6,7 +6,7 @@
 /*   By: phelebra <phelebra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 08:20:12 by phelebra          #+#    #+#             */
-/*   Updated: 2023/04/18 08:56:09 by phelebra         ###   ########.fr       */
+/*   Updated: 2023/04/18 09:15:14 by phelebra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void	ft_rx(t_stack **s)
 	if (!*s || !(*s)->next)
 		return ;
 	temp = *s;
-	*s = lstlast_node(*s);
+	*s = lstlast(*s);
 	(*s)->next = temp;
 	*s = temp->next;
 	temp->next = NULL;
