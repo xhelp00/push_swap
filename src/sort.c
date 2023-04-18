@@ -6,7 +6,7 @@
 /*   By: phelebra <phelebra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 10:55:55 by phelebra          #+#    #+#             */
-/*   Updated: 2023/04/17 17:39:20 by phelebra         ###   ########.fr       */
+/*   Updated: 2023/04/18 07:53:03 by phelebra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,6 +101,7 @@ void	ft_move_to_b(t_stack **a, t_stack **b)
 		}
 	}
 }
+
 /* pushing back the elements from B to A until B is empty*/
 t_stack	**ft_sort_a(t_stack **a, t_stack **b)
 {

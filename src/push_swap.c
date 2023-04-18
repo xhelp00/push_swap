@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: phelebra <xhelp00@gmail.com>               +#+  +:+       +#+        */
+/*   By: phelebra <phelebra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 17:20:29 by phelebra          #+#    #+#             */
-/*   Updated: 2023/04/14 22:31:13 by phelebra         ###   ########.fr       */
+/*   Updated: 2023/04/18 07:53:23 by phelebra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	main(int ac, char **av)
 		ft_error();
 	}
 	if (!ft_issorted(a))
-		ft_sort(&a); /* tbd */
+		ft_sort(&a);
 	ft_free(&a);
 	return (0);
 }
