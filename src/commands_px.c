@@ -6,7 +6,7 @@
 /*   By: phelebra <phelebra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 08:20:04 by phelebra          #+#    #+#             */
-/*   Updated: 2023/04/18 11:19:04 by phelebra         ###   ########.fr       */
+/*   Updated: 2023/04/18 13:13:05 by phelebra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static void	ft_px(t_stack **s1, t_stack **s2)
 {
 	t_stack	*temp;
 
-	if (!s2)
+	if (!*s2)
 		return ;
 	temp = *s1;
 	*s1 = *s2;
