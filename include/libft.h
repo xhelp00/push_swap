@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: phelebra <xhelp00@gmail.com>               +#+  +:+       +#+        */
+/*   By: phelebra <phelebra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/13 10:17:52 by phelebra          #+#    #+#             */
-/*   Updated: 2023/01/21 23:06:11 by phelebra         ###   ########.fr       */
+/*   Updated: 2023/04/18 09:29:00 by phelebra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,13 +71,13 @@ void	ft_lstdelone(t_list *lst, void (*del)(void*));
 void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
-int	ft_printf(const char *s, ...);
-int	ft_putchar(char c);
-int	ft_putstr(char *s);
-int	ft_putnbr(int i);
-int	ft_putptr(uintptr_t u);
-int	ft_puthex(unsigned int ui, char xchar);
-int	ft_putunsign(unsigned int ui);
+int		ft_printf(const char *s, ...);
+int		ft_putchar(char c);
+int		ft_putstr(char *s);
+int		ft_putnbr(int i);
+int		ft_putptr(uintptr_t u);
+int		ft_puthex(unsigned int ui, char xchar);
+int		ft_putunsign(unsigned int ui);
 char	*get_next_line(int fd);
 char	*ft_strjoingnl(char *s1, char *s2);
 char	*ft_strchrgnl(const char *s, int c);
