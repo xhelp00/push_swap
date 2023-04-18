@@ -6,7 +6,7 @@
 /*   By: phelebra <phelebra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 09:08:46 by phelebra          #+#    #+#             */
-/*   Updated: 2023/04/18 10:11:28 by phelebra         ###   ########.fr       */
+/*   Updated: 2023/04/18 11:46:58 by phelebra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ int			ft_pos_b(t_stack *stack_b, int new);
 int			ft_max(t_stack *a);
 t_stack		*lstlast(t_stack *lst);
 t_stack		*ft_stack_new(int value);
-
 /* sort */
 void		ft_sort(t_stack **a);
 void		ft_sort_3(t_stack **a);
