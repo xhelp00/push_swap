@@ -6,7 +6,7 @@
 /*   By: phelebra <phelebra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 09:08:46 by phelebra          #+#    #+#             */
-/*   Updated: 2023/04/17 17:47:40 by phelebra         ###   ########.fr       */
+/*   Updated: 2023/04/18 08:56:59 by phelebra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,5 +65,20 @@ int			ft_apply_rarb(t_stack **a, t_stack **b, int c, char s);
 int			ft_apply_rrarrb(t_stack **a, t_stack **b, int c, char s);
 int			ft_apply_rrarb(t_stack **a, t_stack **b, int c, char s);
 int			ft_apply_rarrb(t_stack **a, t_stack **b, int c, char s);
+/* commands_push */
+void		ft_pa(t_stack **a, t_stack **b, int flag);
+void		ft_pb(t_stack **a, t_stack **b, int flag);
+/* commands_swap */
+void		ft_sa(t_stack **a, int flag);
+void		ft_sb(t_stack **b, int flag);
+void		ft_ss(t_stack **a, t_stack **b, int flag);
+/* commands_rotate */
+void		ft_ra(t_stack **a, int flag);
+void		ft_rb(t_stack **b, int flag);
+void		ft_rr(t_stack **a, t_stack **b, int flag);
+/* commands_reverse_rotate */
+void		ft_rra(t_stack **a, int flag);
+void		ft_rrb(t_stack **b, int flag);
+void		ft_rrr(t_stack **a, t_stack **b, int flag);
 
 #endif

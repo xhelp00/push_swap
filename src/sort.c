@@ -6,7 +6,7 @@
 /*   By: phelebra <phelebra@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 10:55:55 by phelebra          #+#    #+#             */
-/*   Updated: 2023/04/18 07:53:03 by phelebra         ###   ########.fr       */
+/*   Updated: 2023/04/18 08:10:50 by phelebra         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	ft_sort_3(t_stack **a)
 	}
 }
 
-/* This function sort and push stacks until 3 members in stack A left*/
+/* pushing to B stack until 3 members in stack A left*/
 t_stack	*ft_sort_b(t_stack **a)
 {
 	t_stack	*b;
